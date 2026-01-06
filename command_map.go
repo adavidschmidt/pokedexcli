@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func commandMap(cfg *Config) error {
+func commandMap(cfg *Config, args ...string) error {
 
 	locationPage, err := cfg.Client.FetchLocationPage(cfg.Next)
 
@@ -22,7 +22,7 @@ func commandMap(cfg *Config) error {
 	return nil
 }
 
-func commandMapB(cfg *Config) error {
+func commandMapB(cfg *Config, args ...string) error {
 
 	if cfg.Previous == nil {
 		fmt.Println("you are on the first page")
